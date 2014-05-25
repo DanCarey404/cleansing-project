@@ -37,16 +37,16 @@ from the following URL:
    
 * Unzipped the file and moved the "UCI HAR Dataset" directory into the working 
 directory.  
-     * The dataset directory contains two sub-directories ("test" and "train"), 
+     * The dataset directory contained two sub-directories ("test" and "train"), 
 and four explanatory files ("README.txt", "features.txt", "features_info.txt", 
 "activity_labels.txt").
      * The run_analysis.R program uses the X_test.txt, y_test.txt, X_train.txt, y_train.txt, and features.txt files as direct inputs.
 
-* IMPORTANT NOTE: Each user must customize in their copy of the run_analysis.R script the path for the working directory before running the script. 
+* IMPORTANT NOTE: Each user must unzip the file and move the "UCI HAR Dataset" directory into their working directory before running the script. Otherwise the paths will be wrong and the script will not work correctly.
 
 
 ### WITHIN R
-* Set the working directory to be the "UCI HAR Dataset" directory.
+Set the working directory to the location containing the run_analysis.R script and the "UCI HAR Dataset" directory.  Following are the actions performed by the R script.
 
 * Read the activities files for the Test and Train datasets ("./test/y_test.txt", "./train/y_train") into separate dataframes (activity.test, activity.train).
 

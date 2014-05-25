@@ -15,16 +15,15 @@
 
 ## Begin run_analysis.R
 
-## Set the working directory to the "UCI HAR Dataset" directory.
-## NOTE: Each user should customize this working directory in their copy of
-## the run_analysis.R script.
-setwd("C:/Users/524663/Documents/R/DMCworking/cleaningdata/UCI HAR Dataset")
+## NOTE: Make sure the run_analysis.R script file and "UCI HAR Dataset" 
+## directory are in the working directory.
+## setwd("C:/Users/524663/Documents/R/DMCworking/cleaningdata/UCI HAR Dataset")
 
 
 ## Read the activities files for the Test and Train datasets into separate 
 ## dataframes (activity.test, activity.train).
-activity.test  <- read.table("./test/y_test.txt")
-activity.train <- read.table("./train/y_train.txt")
+activity.test  <- read.table("./UCI HAR Dataset/test/y_test.txt")
+activity.train <- read.table("./UCI HAR Dataset/train/y_train.txt")
 
 
 ## Apply descriptive activity labels for the activities in the two dataframes. 
@@ -52,16 +51,16 @@ colnames(activity.train) <- c("code", "activity")
 
 ## Read the subject data for the Test and Training datasets into separate 
 ## dataframes (subject.test, subject.train).
-subject.test  <- read.table("./test/subject_test.txt")
-subject.train <- read.table("./train/subject_train.txt")
+subject.test  <- read.table("./UCI HAR Dataset/test/subject_test.txt")
+subject.train <- read.table("./UCI HAR Dataset/train/subject_train.txt")
 colnames(subject.test)  <- c("subject")
 colnames(subject.train) <- c("subject")
 
 
 ## Read the measurements data for the Test and Training datasets into separate
 ## dataframes (har.test.df, har.train.df).
-har.test.df <- read.table("./test/X_test.txt")
-har.train.df <- read.table("./train/X_train.txt")
+har.test.df <- read.table("./UCI HAR Dataset/test/X_test.txt")
+har.train.df <- read.table("./UCI HAR Dataset/train/X_train.txt")
 
 
 ## Merge the activity, subject, and measurement dataframes together, first by 
@@ -73,7 +72,7 @@ har.feature.df <- rbind(har.train.df, har.test.df)
 
 ## Read the features.txt file and apply its activity names (2nd column), plus 
 ## the strings "activity" and "subject", to construct a vector (features.v)
-features.data <- read.table("./features.txt")
+features.data <- read.table("./UCI HAR Dataset/features.txt")
 features.v <- c("code", "activity", "subject", as.character(features.data[,2]))
 
 
@@ -139,6 +138,6 @@ colnames(har.tidy.df) <- cols.v
 
 ## Save the har.tidy.df dataframe as a separate tab-delimited file, 
 ## "har_tidy_avg.txt", in the working directory.
-write.table(har.tidy.df, file="har_tidy_avg.txt", sep="\t", row.names=FALSE)
+write.table(har.tidy.df, file="./har_tidy_avg.txt", sep="\t", row.names=FALSE)
 
 ## End run_analysis.R
