@@ -137,8 +137,8 @@ cols.v <- colnames(har.mean.std.df)
 for (q in c(3:81)) { cols.v[q] <- paste("AVG", cols.v[q], sep="_") }
 colnames(har.tidy.df) <- cols.v
 
-## Save the har.tidy.df dataframe as a separate file, "har_tidy_avg.csv", in 
-## the working directory.
-write.table(har.tidy.df, file="har_tidy_avg.csv", sep="\t", row.names=FALSE)
+## Save the har.tidy.df dataframe as a separate tab-delimited file, 
+## "har_tidy_avg.txt", in the working directory.
+write.table(har.tidy.df, file="har_tidy_avg.txt", sep="\t", row.names=FALSE)
 
 ## End run_analysis.R
